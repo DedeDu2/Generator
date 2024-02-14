@@ -1,0 +1,15 @@
+def happy_numbers():
+    n = 1
+    while True:
+        if is_happy(n):
+            yield n
+        n += 1
+
+limit = 10
+happy_nums = []
+for num in happy_numbers():
+    if len(happy_nums) == limit:
+        break
+    happy_nums.append(num)
+
+print("First", limit, "happy numbers are:", happy_nums)
